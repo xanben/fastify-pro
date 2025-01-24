@@ -1,0 +1,25 @@
+openapi: 3.1.0
+
+info:
+  title: Fastify PRO API
+  version: 1.0.0
+paths:
+  /:
+    get:
+      tags: [ System ]
+      summary: Get the API info
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Info'
+components:
+  schemas:
+    Info:
+      type: object
+      properties:
+        info:
+          type: string
+

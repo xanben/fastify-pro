@@ -5,11 +5,10 @@ import plugin from 'fastify-plugin';
 
 export default plugin(async (fastify: FastifyInstance) => {
   await fastify.register(Swagger, {
-    openapi: {
-      info: {
-        title: process.env.API_TITLE,
-        version: 'v1'
-      }
+    mode: 'static',
+    specification: {
+      path: './spec/v1.yaml',
+      baseDir: './'
     }
   });
 
